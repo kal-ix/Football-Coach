@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eliminazione Dati e Account - Football Coach</title>
+  <meta name="description" content="Istruzioni per eliminare il tuo account e i dati cloud dall'app Football Coach.">
+  <meta name="author" content="Kal-ix">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/icon.png">
+</head>
+<body>
+
+  <!-- ======= NAVBAR ======= -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <img src="img/icon.png" alt="Football Coach" width="30" height="30"> Football Coach
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#features">Funzionalità</a></li>
+        <li><a href="privacy-it.html">Privacy Policy</a></li>
+        <li>
+          <div class="nav-lang">
+            <a href="delete-data-it.html" class="active" title="Italiano">IT</a>
+            <a href="delete-data-en.html" title="English">EN</a>
+          </div>
+        </li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ======= PAGE HEADER ======= -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Eliminazione Dati e Account</h1>
+      <p class="meta">Football Coach &middot; Istruzioni per la cancellazione dei dati</p>
+    </div>
+  </section>
+
+  <!-- ======= CONTENT ======= -->
+  <section class="legal-content">
+    <div class="container">
+
+      <h2>Quali dati puoi eliminare</h2>
+      <p>Football Coach ti permette di eliminare i tuoi dati in diversi modi, a seconda di come utilizzi l'app.</p>
+
+      <!-- ==================== -->
+      <h2>1. Eliminare l'account e tutti i dati cloud (dall'app)</h2>
+      <p>Se hai effettuato l'accesso con Google, puoi eliminare il tuo account e <strong>tutti i dati cloud associati</strong> direttamente dall'app.</p>
+
+      <h3>Procedura:</h3>
+      <ol>
+        <li>Apri l'app <strong>Football Coach</strong></li>
+        <li>Tocca l'icona del <strong>menu laterale</strong> (☰) in alto a sinistra</li>
+        <li>Scorri verso il basso e tocca <strong style="color: #e53935;">Elimina account e dati cloud</strong></li>
+        <li>Leggi attentamente l'avviso e conferma toccando <strong>"Sì, elimina tutto"</strong></li>
+        <li>Se richiesto, effettua nuovamente l'accesso con Google per confermare la tua identità</li>
+      </ol>
+
+      <h3>Cosa viene eliminato:</h3>
+      <ul>
+        <li>✅ Il tuo <strong>account Firebase Authentication</strong> (login Google nell'app)</li>
+        <li>✅ Il tuo <strong>profilo utente</strong> dal database cloud (nome, email, foto profilo)</li>
+        <li>✅ <strong>Tutte le squadre di cui sei proprietario</strong>, inclusi:
+          <ul>
+            <li>Giocatori (dati anagrafici e foto)</li>
+            <li>Allenamenti (sessioni ed esercizi)</li>
+            <li>Partite (risultati, formazioni, statistiche)</li>
+          </ul>
+        </li>
+        <li>✅ La tua <strong>appartenenza alle squadre condivise</strong> (verrai rimosso come membro)</li>
+        <li>✅ Tutti gli <strong>inviti in sospeso</strong> inviati al tuo indirizzo email</li>
+      </ul>
+
+      <h3>Cosa NON viene eliminato:</h3>
+      <ul>
+        <li>❌ I <strong>dati locali</strong> salvati sul tuo dispositivo (database Hive locale). Questi restano sul telefono e puoi continuare ad usare l'app in modalità offline.</li>
+        <li>❌ Il tuo <strong>account Google</strong> — viene solo disconnesso dall'app, non eliminato da Google.</li>
+        <li>❌ Le <strong>squadre condivise di cui NON sei proprietario</strong> — continuano ad esistere per gli altri membri.</li>
+      </ul>
+
+      <p><strong>⚠️ Attenzione:</strong> questa operazione è <strong>irreversibile</strong>. Una volta confermata, i dati cloud non potranno essere recuperati.</p>
+
+      <!-- ==================== -->
+      <h2>2. Eliminare una singola squadra dal cloud</h2>
+      <p>Se vuoi rimuovere solo una squadra dal cloud senza eliminare il tuo account:</p>
+      <ol>
+        <li>Apri la squadra che vuoi rimuovere</li>
+        <li>Vai nelle <strong>impostazioni della squadra</strong></li>
+        <li>Seleziona <strong>Elimina squadra</strong></li>
+      </ol>
+      <p>Verranno eliminati tutti i dati della squadra dal cloud (giocatori, allenamenti, partite). I dati locali sul dispositivo potranno comunque essere mantenuti.</p>
+
+      <!-- ==================== -->
+      <h2>3. Abbandonare una squadra condivisa</h2>
+      <p>Se sei membro di una squadra condivisa da un altro allenatore e vuoi rimuovere il tuo accesso:</p>
+      <ol>
+        <li>Apri la squadra condivisa</li>
+        <li>Vai in <strong>Gestisci Membri</strong></li>
+        <li>Tocca <strong>Abbandona Squadra</strong></li>
+      </ol>
+      <p>Verrai rimosso dalla lista dei membri e non avrai più accesso ai dati della squadra.</p>
+
+      <!-- ==================== -->
+      <h2>4. Effettuare il logout</h2>
+      <p>Se vuoi semplicemente interrompere la sincronizzazione senza eliminare i dati:</p>
+      <ol>
+        <li>Apri il <strong>menu laterale</strong> (☰)</li>
+        <li>Tocca <strong>Esci</strong></li>
+      </ol>
+      <p>La sincronizzazione si interromperà, ma i tuoi dati resteranno nel cloud. Potrai riprendere la sincronizzazione effettuando nuovamente l'accesso.</p>
+
+      <!-- ==================== -->
+      <h2>5. Eliminare i dati locali</h2>
+      <p>Per eliminare i dati salvati localmente sul tuo dispositivo:</p>
+      <ul>
+        <li><strong>Disinstalla l'app</strong> dal tuo dispositivo. Tutti i dati locali verranno rimossi.</li>
+        <li>In alternativa, vai nelle <strong>Impostazioni del telefono → App → Football Coach → Cancella Dati</strong>.</li>
+      </ul>
+
+      <!-- ==================== -->
+      <h2>6. Richiedere l'eliminazione via email</h2>
+      <p>Se non riesci ad eliminare i dati dall'app, o se desideri una conferma scritta dell'avvenuta cancellazione, puoi contattarci direttamente:</p>
+      <p style="font-size: 1.1em;">
+        📧 <strong><a href="mailto:request.kalix@gmail.com">request.kalix@gmail.com</a></strong>
+      </p>
+      <p>Nella tua email, indica:</p>
+      <ul>
+        <li>L'<strong>indirizzo email</strong> dell'account Google utilizzato nell'app</li>
+        <li>Il <strong>nome della squadra</strong> (se applicabile)</li>
+        <li>La richiesta specifica (es. "eliminare il mio account e tutti i dati associati")</li>
+      </ul>
+      <p>Risponderemo e provvederemo alla cancellazione entro <strong>30 giorni</strong> dalla richiesta, come previsto dal GDPR e dal CCPA.</p>
+
+      <!-- ==================== -->
+      <h2>Riepilogo</h2>
+      <table style="width:100%; border-collapse: collapse; margin: 1em 0;">
+        <thead>
+          <tr style="background: rgba(255,255,255,0.1);">
+            <th style="text-align: left; padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.2);">Azione</th>
+            <th style="text-align: left; padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.2);">Cosa viene eliminato</th>
+            <th style="text-align: left; padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.2);">Come</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);">Elimina account</td>
+            <td style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);">Account + tutte le squadre (owner) + membership + inviti</td>
+            <td style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);">Menu → Elimina account e dati cloud</td>
+          </tr>
+          <tr>
+            <td style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);">Elimina squadra</td>
+            <td style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);">Una singola squadra e tutti i suoi dati cloud</td>
+            <td style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);">Impostazioni squadra → Elimina squadra</td>
+          </tr>
+          <tr>
+            <td style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);">Abbandona squadra</td>
+            <td style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);">Il tuo accesso ad una squadra condivisa</td>
+            <td style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);">Gestisci Membri → Abbandona Squadra</td>
+          </tr>
+          <tr>
+            <td style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);">Logout</td>
+            <td style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);">Nulla (interrompe solo la sincronizzazione)</td>
+            <td style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);">Menu → Esci</td>
+          </tr>
+          <tr>
+            <td style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);">Dati locali</td>
+            <td style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);">Tutti i dati sul dispositivo</td>
+            <td style="padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);">Disinstalla app o Cancella Dati da Impostazioni</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 2em;">
+        Per ulteriori informazioni, consulta la nostra <a href="privacy-it.html">Privacy Policy</a>.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Football Coach</h4>
+          <p>L'app per allenatori di calcio</p>
+        </div>
+        <div>
+          <h4>Link</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="privacy-it.html">Privacy Policy</a></li>
+            <li><a href="delete-data-it.html">Eliminazione Dati</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contatti</h4>
+          <ul class="footer-links">
+            <li>Sviluppatore: Kal-ix</li>
+            <li><a href="mailto:request.kalix@gmail.com">request.kalix@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Kal-ix. Tutti i diritti riservati.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => { navLinks.classList.remove('active'); });
+    });
+  </script>
+
+</body>
+</html>
