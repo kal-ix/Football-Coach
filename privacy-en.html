@@ -47,7 +47,7 @@
   <section class="page-header">
     <div class="container">
       <h1>Privacy Policy</h1>
-      <p class="meta">Effective Date: January 31, 2026 &middot; Version 1.0</p>
+      <p class="meta">Effective Date: February 28, 2026 &middot; Version 2.0</p>
     </div>
   </section>
 
@@ -76,7 +76,28 @@
       <li><strong>Team name</strong></li>
     </ul>
 
-    <h3>2.2 Automatically Collected Data</h3>
+    <h3>2.2 Account Data (Google Sign-In)</h3>
+    <p>When the user chooses to log in via Google Sign-In, the following data is collected:</p>
+    <ul>
+      <li><strong>Email address</strong> of the Google account</li>
+      <li><strong>Display name</strong> of the Google account</li>
+      <li><strong>Profile photo</strong> of the Google account (URL)</li>
+      <li><strong>Unique user identifier</strong> (Firebase UID)</li>
+    </ul>
+    <p>This data is stored in the user profile on Google Cloud Firestore to enable authentication and cross-device synchronization. Login is <strong>optional</strong>: the App works without authentication, in a fully local mode.</p>
+
+    <h3>2.3 Cloud-Synced Data (optional feature)</h3>
+    <p>When the user enables cloud synchronization, the following data is uploaded to Google Cloud Firestore:</p>
+    <ul>
+      <li><strong>Player data</strong> (names, dates of birth, statistics, photographs encoded in base64)</li>
+      <li><strong>Training data</strong> (date, time, exercises, notes, exercise images)</li>
+      <li><strong>Match data</strong> (date, time, opponent, results, squad members, formation)</li>
+      <li><strong>Exercise data</strong> (shared exercise library, including images)</li>
+      <li><strong>Team information</strong> (name, owner, members, roles, invitations)</li>
+    </ul>
+    <p>Cloud synchronization is <strong>optional</strong> and requires Google login. The user can use the App in a fully offline mode without sharing any data to the cloud.</p>
+
+    <h3>2.4 Automatically Collected Data</h3>
     <p><strong>App usage data</strong> via Google Firebase Analytics:</p>
     <ul>
       <li>App opening events</li>
@@ -103,7 +124,7 @@
 
     <h3>For the EU (GDPR):</h3>
     <ul>
-      <li><strong>Explicit consent:</strong> The user provides consent upon first launch of the App</li>
+      <li><strong>Explicit consent:</strong> The user provides consent upon first launch of the App and upon enabling cloud synchronization</li>
       <li><strong>Legitimate interest:</strong> Improving the App and analyzing usage</li>
       <li><strong>Contract fulfillment:</strong> Operating the App as a requested service</li>
     </ul>
@@ -122,6 +143,21 @@
       <li>Storage and management of player data</li>
       <li>Recording training sessions and matches</li>
       <li>Viewing and exporting PDF reports</li>
+    </ul>
+
+    <h3>Authentication and User Profile</h3>
+    <ul>
+      <li>User identification via Google Sign-In</li>
+      <li>Creation and management of user profile on Firestore</li>
+      <li>Login session management</li>
+    </ul>
+
+    <h3>Cloud Synchronization and Team Sharing</h3>
+    <ul>
+      <li>Synchronization of team data across the same user's different devices</li>
+      <li>Sharing the team with other coaches (via email invitation)</li>
+      <li>Management of team member roles and permissions (owner, editor, viewer)</li>
+      <li>Real-time synchronization of changes across all connected devices</li>
     </ul>
 
     <h3>Analytics and Service Improvement</h3>
@@ -150,20 +186,30 @@
     <h3>5.1 Storage</h3>
     <ul>
       <li><strong>Local data:</strong> Player, training, and match data are stored locally on the user's device using the Hive database</li>
-      <li><strong>Cloud (Firebase):</strong> Only analytics and crash reporting data are sent to Google Firebase</li>
-      <li><strong>No personal server:</strong> The Application does not manage private servers for storing personal data</li>
+      <li><strong>Cloud (Firebase):</strong> The following data is sent to Google Firebase:
+        <ul>
+          <li><strong>Firebase Analytics:</strong> Usage data and crash reporting</li>
+          <li><strong>Firebase Authentication:</strong> Google account login data (email, name, profile photo)</li>
+          <li><strong>Cloud Firestore:</strong> When synchronization is enabled, team data (players, training sessions, matches, exercises) is stored on Firestore. Photographs are encoded in base64 format and saved directly in Firestore documents (Firebase Storage is not used)</li>
+        </ul>
+      </li>
+      <li><strong>No personal server:</strong> The Application does not manage private servers for storing personal data. All cloud data is managed through Google Firebase infrastructure</li>
     </ul>
 
     <h3>5.2 Protection</h3>
     <ul>
       <li><strong>Local encryption:</strong> Data is protected by the device's operating system</li>
-      <li><strong>Encryption in transit:</strong> Communications with Firebase and AdMob use HTTPS/TLS</li>
-      <li><strong>No automatic cloud backup:</strong> Personal data remains on the device unless the user performs manual backups</li>
+      <li><strong>Encryption in transit:</strong> All communications with Firebase (Authentication, Firestore, Analytics, AdMob) use HTTPS/TLS</li>
+      <li><strong>Secure authentication:</strong> Login is performed via Google's OAuth 2.0; the App does not handle or store passwords</li>
+      <li><strong>Firestore security rules:</strong> Access to cloud data is protected by security rules that restrict reading and writing to authorized users only (team members)</li>
+      <li><strong>Optional cloud data:</strong> Personal data remains exclusively on the local device if the user does not enable cloud synchronization</li>
     </ul>
 
     <h3>5.3 Retention Period</h3>
     <ul>
       <li><strong>Local data:</strong> Retained for the duration of the App installation on the device</li>
+      <li><strong>Firestore data:</strong> Cloud-synced data is retained until the user manually deletes it or deletes their account</li>
+      <li><strong>Firebase user profile:</strong> Retained until account deletion or permanent logout</li>
       <li><strong>Analytics:</strong> Google retains analytics data for 2-14 months according to their policies</li>
       <li><strong>AdMob:</strong> Google retains advertising data for reporting and service improvement purposes</li>
     </ul>
@@ -173,10 +219,24 @@
     <h3>6.1 Data Shared with Third Parties</h3>
     <p>The Application shares data with the following services:</p>
 
-    <h4>Google Firebase</h4>
+    <h4>Google Firebase Authentication</h4>
     <ul>
-      <li><strong>What:</strong> Session identifiers, crash logs, analytics</li>
-      <li><strong>Why:</strong> Reliability monitoring, diagnostics, usage statistics</li>
+      <li><strong>What:</strong> Email, display name, profile photo of the Google account</li>
+      <li><strong>Why:</strong> User authentication and login session management</li>
+      <li><strong>Privacy Link:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></li>
+    </ul>
+
+    <h4>Google Cloud Firestore</h4>
+    <ul>
+      <li><strong>What:</strong> User profile, team data (players, training sessions, matches, exercises), member information and invitations. Player photographs and exercise images are encoded in base64 and saved in Firestore documents</li>
+      <li><strong>Why:</strong> Data synchronization across devices and team sharing between coaches</li>
+      <li><strong>Privacy Link:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></li>
+    </ul>
+
+    <h4>Google Firebase Analytics</h4>
+    <ul>
+      <li><strong>What:</strong> Session identifiers, crash logs, anonymized usage data, device type, OS version</li>
+      <li><strong>Why:</strong> Reliability monitoring, diagnostics, usage statistics, feature improvement</li>
       <li><strong>Privacy Link:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></li>
     </ul>
 
@@ -187,22 +247,25 @@
       <li><strong>Privacy Link:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
     </ul>
 
-    <h4>Google Analytics (part of Firebase)</h4>
+    <h3>6.2 Sharing Between Users (Shared Team Feature)</h3>
+    <p>When the user enables team sharing:</p>
     <ul>
-      <li><strong>What:</strong> Anonymized usage data, device type, OS version</li>
-      <li><strong>Why:</strong> Usage analysis, feature improvement</li>
-      <li><strong>Privacy Link:</strong> <a href="https://support.google.com/analytics/answer/9019185" target="_blank" rel="noopener">support.google.com/analytics</a></li>
+      <li><strong>Team data</strong> (players, training sessions, matches, exercises) becomes accessible to all invited members</li>
+      <li>The user's <strong>email</strong> and <strong>display name</strong> are visible to other team members</li>
+      <li>The <strong>role</strong> (owner, editor, viewer) determines data modification permissions</li>
+      <li><strong>Invitations</strong> contain the recipient's email and the inviter's name</li>
     </ul>
 
-    <h3>6.2 Data NOT Shared</h3>
+    <h3>6.3 Data NOT Shared (Offline Mode)</h3>
+    <p>If the user does not log in and does not enable cloud synchronization:</p>
     <ul>
       <li><strong>Player photographs:</strong> Remain ONLY on the local device</li>
       <li><strong>Player names and personal data:</strong> Remain ONLY on the local device</li>
       <li><strong>Training and match data:</strong> Remain ONLY on the local device</li>
     </ul>
 
-    <h3>6.3 International Transfers</h3>
-    <p>Google (Firebase and AdMob) transfers data to the USA and other countries. Google services are certified according to:</p>
+    <h3>6.4 International Transfers</h3>
+    <p>Google (Firebase, Firestore, and AdMob) transfers data to the USA and other countries. Google services are certified according to:</p>
     <ul>
       <li><strong>Standard Contractual Clauses (SCC)</strong></li>
       <li><strong>Privacy Shield</strong> (where applicable)</li>
@@ -214,9 +277,9 @@
     <ul>
       <li><strong>Right of access:</strong> Request a copy of personal data</li>
       <li><strong>Right to rectification:</strong> Correct inaccurate data</li>
-      <li><strong>Right to erasure:</strong> Request deletion of data ("right to be forgotten")</li>
+      <li><strong>Right to erasure:</strong> Request deletion of data ("right to be forgotten"), including data on Firestore</li>
       <li><strong>Right to restriction of processing:</strong> Limit how data is used</li>
-      <li><strong>Right to data portability:</strong> Obtain data in structured format</li>
+      <li><strong>Right to data portability:</strong> Obtain data in structured format (the App supports export in JSON format)</li>
       <li><strong>Right to object:</strong> Object to processing for specific purposes</li>
       <li><strong>Right not to be subject to automated decisions:</strong> Not applicable to this App</li>
     </ul>
@@ -232,6 +295,15 @@
     </ul>
     <p><strong>Contact:</strong> To exercise these rights, contact: <a href="mailto:request.kalix@gmail.com">request.kalix@gmail.com</a></p>
 
+    <h3>7.3 Cloud Data Deletion</h3>
+    <p>The user may at any time:</p>
+    <ul>
+      <li><strong>Log out</strong> to stop cloud synchronization</li>
+      <li><strong>Delete the team from the cloud</strong> to remove all synced data from Firestore</li>
+      <li><strong>Leave a shared team</strong> to remove their access to the data</li>
+      <li><strong>Request complete deletion</strong> of their profile and data by contacting the developer</li>
+    </ul>
+
     <h2>8. Sensitive Data</h2>
     <p>The Application does <strong>NOT</strong> explicitly collect the following sensitive data:</p>
     <ul>
@@ -242,7 +314,7 @@
       <li>Political data</li>
       <li>Religious data</li>
     </ul>
-    <p><strong>Note:</strong> Player photographs are images that are part of the App's ordinary functionality and are not treated as "biometric data" unless used for facial recognition (which the App does not do).</p>
+    <p><strong>Note:</strong> Player photographs are images that are part of the App's ordinary functionality and are not treated as "biometric data" unless used for facial recognition (which the App does not do). When cloud synchronization is enabled, photographs are encoded in base64 and uploaded to Firestore to enable cross-device synchronization.</p>
 
     <h2>9. Android Permissions Notice</h2>
     <table>
@@ -256,7 +328,7 @@
       <tbody>
         <tr>
           <td><code>INTERNET</code></td>
-          <td>Connection to Firebase and AdMob</td>
+          <td>Connection to Firebase (Auth, Firestore, Analytics) and AdMob</td>
           <td>Yes</td>
         </tr>
         <tr>
@@ -313,6 +385,7 @@
     <p>The Application does <strong>NOT</strong> use traditional cookies (it is not a web app). However:</p>
     <ul>
       <li><strong>Firebase</strong> and <strong>Google Analytics</strong> may use local persistent identifiers</li>
+      <li><strong>Firebase Authentication</strong> stores session tokens to keep the user logged in</li>
     </ul>
 
     <h3>11.2 Advertising Identifiers</h3>
@@ -327,9 +400,11 @@
     <ol>
       <li><strong>Encrypted local storage:</strong> Data on the device is protected by the operating system</li>
       <li><strong>HTTPS/TLS connections:</strong> All communications with cloud services use encryption</li>
-      <li><strong>No cloud storage of personal data:</strong> Photos and names remain on the device</li>
+      <li><strong>OAuth 2.0 authentication:</strong> Login is performed via Google's secure protocol; no passwords are handled or stored by the App</li>
+      <li><strong>Firestore security rules:</strong> Cloud data access is restricted to authorized team members only, with role-based permissions</li>
       <li><strong>No hardcoded credentials:</strong> All secrets are securely managed</li>
       <li><strong>Security updates:</strong> Regular patches for known vulnerabilities</li>
+      <li><strong>Optional synchronization:</strong> Personal data remains on the local device if the user does not choose to enable cloud synchronization</li>
     </ol>
     <p><strong>Limitation:</strong> No system is completely secure. Users are responsible for their device security.</p>
 
@@ -338,7 +413,8 @@
     <p>However, since the Application manages data about young players (such as photos and dates of birth), parents/guardians must:</p>
     <ul>
       <li>Provide appropriate consent if residing in the EU (GDPR)</li>
-      <li>Understand that player data remains local on the coach's device</li>
+      <li>Understand that player data remains local on the coach's device, unless cloud synchronization is enabled</li>
+      <li>Understand that, if cloud synchronization is enabled, player data (including photos and dates of birth) is uploaded to Google Cloud Firestore</li>
       <li>Configure the device with parental controls if appropriate</li>
     </ul>
 
@@ -386,6 +462,8 @@
     <p>All collected data is used exclusively for:</p>
     <ul>
       <li>Operating the Application</li>
+      <li>Synchronizing data across devices (only if the user enables this feature)</li>
+      <li>Sharing the team with other coaches (only upon explicit invitation)</li>
       <li>Improving user experience</li>
       <li>Regulatory compliance</li>
       <li>Data is <strong>NOT</strong> sold to third parties</li>
@@ -399,10 +477,16 @@
     </ul>
 
     <h3>16.3 Applicable Version</h3>
-    <p>This is version 1.0 of the Privacy Policy, applicable from January 2026.</p>
+    <p>This is version 2.0 of the Privacy Policy, applicable from February 2026.</p>
+
+    <h3>16.4 Changelog</h3>
+    <ul>
+      <li><strong>Version 2.0 (February 28, 2026):</strong> Added documentation for Firebase Authentication (Google Sign-In), Cloud Firestore data synchronization, team sharing between coaches, member management and invitations. Updated sections on cloud storage, third-party sharing, and data security.</li>
+      <li><strong>Version 1.0 (January 31, 2026):</strong> First version of the Privacy Policy.</li>
+    </ul>
 
     <hr style="margin: 48px 0 24px; border: none; border-top: 2px solid var(--bg-alt);">
-    <p><strong>Last Modified:</strong> January 31, 2026</p>
+    <p><strong>Last Modified:</strong> February 28, 2026</p>
     <p><strong>Acceptance:</strong> Use of the Application implies acceptance of this Privacy Policy in its entirety.</p>
 
   </div>
