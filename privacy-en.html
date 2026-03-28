@@ -47,7 +47,7 @@
   <section class="page-header">
     <div class="container">
       <h1>Privacy Policy</h1>
-      <p class="meta">Effective Date: February 28, 2026 &middot; Version 2.0</p>
+      <p class="meta">Effective Date: March 28, 2026 &middot; Version 3.0</p>
     </div>
   </section>
 
@@ -70,10 +70,16 @@
       <li><strong>Player names</strong> (surname and first name)</li>
       <li><strong>Players' dates of birth</strong></li>
       <li><strong>Player photographs</strong></li>
+      <li><strong>Preferred foot</strong> of players (right, left, both)</li>
+      <li><strong>Role/position</strong> of players (among 40+ standard football positions)</li>
       <li><strong>Performance data</strong> (minutes played, goals, assists, yellow cards, red cards)</li>
-      <li><strong>Training information</strong> (date, time, exercises, notes)</li>
-      <li><strong>Match information</strong> (date, time, opponent, results, squad members, formation on the pitch)</li>
+      <li><strong>Training information</strong> (date, time, exercises, notes, attendance/absence)</li>
+      <li><strong>Match information</strong> (date, time, opponent, results, squad members, formation on the pitch, opponent analysis)</li>
+      <li><strong>Tactical schemes</strong> drawn on the tactical board (arrows, curves, shapes, player and equipment positioning)</li>
+      <li><strong>Exercises</strong> (name, code, description, objectives, phase, tactical images, field dimensions, duration)</li>
+      <li><strong>Custom events</strong> (title, date, location, description, notes)</li>
       <li><strong>Team name</strong></li>
+      <li><strong>Player email address</strong> (optional, entered by the user only to share a player's profile sheet with the player; not stored in the player's profile)</li>
     </ul>
 
     <h3>2.2 Account Data (Google Sign-In)</h3>
@@ -89,10 +95,11 @@
     <h3>2.3 Cloud-Synced Data (optional feature)</h3>
     <p>When the user enables cloud synchronization, the following data is uploaded to Google Cloud Firestore:</p>
     <ul>
-      <li><strong>Player data</strong> (names, dates of birth, statistics, photographs encoded in base64)</li>
-      <li><strong>Training data</strong> (date, time, exercises, notes, exercise images)</li>
-      <li><strong>Match data</strong> (date, time, opponent, results, squad members, formation)</li>
+      <li><strong>Player data</strong> (names, dates of birth, role, preferred foot, statistics, photographs encoded in base64)</li>
+      <li><strong>Training data</strong> (date, time, exercises, notes, attendance, exercise images)</li>
+      <li><strong>Match data</strong> (date, time, opponent, results, squad members, formation, tactical schemes)</li>
       <li><strong>Exercise data</strong> (shared exercise library, including images)</li>
+      <li><strong>Event data</strong> (custom event calendar)</li>
       <li><strong>Team information</strong> (name, owner, members, roles, invitations)</li>
     </ul>
     <p>Cloud synchronization is <strong>optional</strong> and requires Google login. The user can use the App in a fully offline mode without sharing any data to the cloud.</p>
@@ -142,7 +149,10 @@
     <ul>
       <li>Storage and management of player data</li>
       <li>Recording training sessions and matches</li>
+      <li>Creating tactical schemes on the interactive tactical board</li>
+      <li>Managing the event calendar</li>
       <li>Viewing and exporting PDF reports</li>
+      <li>Managing the exercise library with import/export</li>
     </ul>
 
     <h3>Authentication and User Profile</h3>
@@ -190,7 +200,7 @@
         <ul>
           <li><strong>Firebase Analytics:</strong> Usage data and crash reporting</li>
           <li><strong>Firebase Authentication:</strong> Google account login data (email, name, profile photo)</li>
-          <li><strong>Cloud Firestore:</strong> When synchronization is enabled, team data (players, training sessions, matches, exercises) is stored on Firestore. Photographs are encoded in base64 format and saved directly in Firestore documents (Firebase Storage is not used)</li>
+          <li><strong>Cloud Firestore:</strong> When synchronization is enabled, team data (players, training sessions, matches, exercises, events) is stored on Firestore. Photographs and tactical images are encoded in base64 format and saved directly in Firestore documents (Firebase Storage is not used)</li>
         </ul>
       </li>
       <li><strong>No personal server:</strong> The Application does not manage private servers for storing personal data. All cloud data is managed through Google Firebase infrastructure</li>
@@ -228,7 +238,7 @@
 
     <h4>Google Cloud Firestore</h4>
     <ul>
-      <li><strong>What:</strong> User profile, team data (players, training sessions, matches, exercises), member information and invitations. Player photographs and exercise images are encoded in base64 and saved in Firestore documents</li>
+      <li><strong>What:</strong> User profile, team data (players, training sessions, matches, exercises, events), member information and invitations. Player photographs and exercise images are encoded in base64 and saved in Firestore documents</li>
       <li><strong>Why:</strong> Data synchronization across devices and team sharing between coaches</li>
       <li><strong>Privacy Link:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></li>
     </ul>
@@ -486,16 +496,17 @@
     </ul>
 
     <h3>16.3 Applicable Version</h3>
-    <p>This is version 2.0 of the Privacy Policy, applicable from February 2026.</p>
+    <p>This is version 3.0 of the Privacy Policy, applicable from March 2026.</p>
 
     <h3>16.4 Changelog</h3>
     <ul>
+      <li><strong>Version 3.0 (March 28, 2026):</strong> Added preferred foot and position/role of players. Documented tactical board, event calendar, exercise library with import/export. Updated sections on collected data, processing purposes, and storage.</li>
       <li><strong>Version 2.0 (February 28, 2026):</strong> Added documentation for Firebase Authentication (Google Sign-In), Cloud Firestore data synchronization, team sharing between coaches, member management and invitations. Updated sections on cloud storage, third-party sharing, and data security.</li>
       <li><strong>Version 1.0 (January 31, 2026):</strong> First version of the Privacy Policy.</li>
     </ul>
 
     <hr style="margin: 48px 0 24px; border: none; border-top: 2px solid var(--bg-alt);">
-    <p><strong>Last Modified:</strong> February 28, 2026</p>
+    <p><strong>Last Modified:</strong> March 28, 2026</p>
     <p><strong>Acceptance:</strong> Use of the Application implies acceptance of this Privacy Policy in its entirety.</p>
 
   </div>

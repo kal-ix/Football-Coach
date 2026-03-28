@@ -47,7 +47,7 @@
   <section class="page-header">
     <div class="container">
       <h1>Privacy Policy</h1>
-      <p class="meta">Data di entrata in vigore: 28 febbraio 2026 &middot; Versione 2.0</p>
+      <p class="meta">Data di entrata in vigore: 28 marzo 2026 &middot; Versione 3.0</p>
     </div>
   </section>
 
@@ -70,10 +70,16 @@
       <li><strong>Nomi dei giocatori</strong> (cognome e nome)</li>
       <li><strong>Date di nascita</strong> dei giocatori</li>
       <li><strong>Fotografie</strong> dei giocatori</li>
+      <li><strong>Piede preferito</strong> dei giocatori (destro, sinistro, entrambi)</li>
+      <li><strong>Ruolo/posizione</strong> dei giocatori (tra 40+ posizioni calcistiche standard)</li>
       <li><strong>Dati sulle prestazioni</strong> (minuti giocati, gol, assist, ammonizioni, espulsioni)</li>
-      <li><strong>Informazioni sugli allenamenti</strong> (data, ora, esercizi, note)</li>
-      <li><strong>Informazioni sulle partite</strong> (data, ora, avversario, risultati, convocati, formazione in campo)</li>
+      <li><strong>Informazioni sugli allenamenti</strong> (data, ora, esercizi, note, presenze/assenze)</li>
+      <li><strong>Informazioni sulle partite</strong> (data, ora, avversario, risultati, convocati, formazione in campo, analisi avversario)</li>
+      <li><strong>Schemi tattici</strong> disegnati sulla lavagna tattica (frecce, curve, forme, posizionamento giocatori ed attrezzature)</li>
+      <li><strong>Esercizi</strong> (nome, codice, descrizione, obiettivi, fase, immagini tattiche, dimensioni campo, durata)</li>
+      <li><strong>Eventi personalizzati</strong> (titolo, data, luogo, descrizione, note)</li>
       <li><strong>Nome della squadra</strong></li>
+      <li><strong>Indirizzo email del giocatore</strong> (facoltativo, inserito dall'utente solo per condividere la scheda del giocatore con il giocatore stesso; non viene memorizzato nel profilo del giocatore)</li>
     </ul>
 
     <h3>2.2 Dati dell'Account (Google Sign-In)</h3>
@@ -89,10 +95,11 @@
     <h3>2.3 Dati Sincronizzati nel Cloud (funzionalità opzionale)</h3>
     <p>Quando l'utente attiva la sincronizzazione cloud, i seguenti dati vengono caricati su Google Cloud Firestore:</p>
     <ul>
-      <li><strong>Dati dei giocatori</strong> (nomi, date di nascita, statistiche, fotografie codificate in base64)</li>
-      <li><strong>Dati degli allenamenti</strong> (data, ora, esercizi, note, immagini degli esercizi)</li>
-      <li><strong>Dati delle partite</strong> (data, ora, avversario, risultati, convocati, formazione)</li>
+      <li><strong>Dati dei giocatori</strong> (nomi, date di nascita, ruolo, piede preferito, statistiche, fotografie codificate in base64)</li>
+      <li><strong>Dati degli allenamenti</strong> (data, ora, esercizi, note, presenze, immagini degli esercizi)</li>
+      <li><strong>Dati delle partite</strong> (data, ora, avversario, risultati, convocati, formazione, schemi tattici)</li>
       <li><strong>Dati degli esercizi</strong> (libreria esercizi condivisa, incluse immagini)</li>
+      <li><strong>Dati degli eventi</strong> (calendario eventi personalizzati)</li>
       <li><strong>Informazioni sulla squadra</strong> (nome, proprietario, membri, ruoli, inviti)</li>
     </ul>
     <p>La sincronizzazione è <strong>facoltativa</strong> e richiede il login con Google. L'utente può utilizzare l'App in modalità completamente offline senza condividere alcun dato nel cloud.</p>
@@ -142,7 +149,10 @@
     <ul>
       <li>Memorizzazione e gestione dei dati dei giocatori</li>
       <li>Registrazione di allenamenti e partite</li>
+      <li>Creazione di schemi tattici sulla lavagna interattiva</li>
+      <li>Gestione del calendario eventi</li>
       <li>Visualizzazione e esportazione di report in PDF</li>
+      <li>Gestione della libreria esercizi con importazione/esportazione</li>
     </ul>
 
     <h3>Autenticazione e Profilo Utente</h3>
@@ -190,7 +200,7 @@
         <ul>
           <li><strong>Firebase Analytics:</strong> Dati di utilizzo e crash reporting</li>
           <li><strong>Firebase Authentication:</strong> Dati di accesso dell'account Google (email, nome, foto profilo)</li>
-          <li><strong>Cloud Firestore:</strong> Quando la sincronizzazione è attiva, i dati della squadra (giocatori, allenamenti, partite, esercizi) vengono archiviati su Firestore. Le fotografie vengono codificate in formato base64 e salvate direttamente nei documenti Firestore (non viene utilizzato Firebase Storage)</li>
+          <li><strong>Cloud Firestore:</strong> Quando la sincronizzazione è attiva, i dati della squadra (giocatori, allenamenti, partite, esercizi, eventi) vengono archiviati su Firestore. Le fotografie e le immagini tattiche vengono codificate in formato base64 e salvate direttamente nei documenti Firestore (non viene utilizzato Firebase Storage)</li>
         </ul>
       </li>
       <li><strong>Nessun server personale:</strong> L'Applicazione non gestisce server privati per l'archiviazione di dati personali. Tutti i dati cloud sono gestiti tramite l'infrastruttura Google Firebase</li>
@@ -228,7 +238,7 @@
 
     <h4>Google Cloud Firestore</h4>
     <ul>
-      <li><strong>Cosa:</strong> Profilo utente, dati della squadra (giocatori, allenamenti, partite, esercizi), informazioni sui membri e inviti. Le fotografie dei giocatori e le immagini degli esercizi vengono codificate in base64 e salvate nei documenti Firestore</li>
+      <li><strong>Cosa:</strong> Profilo utente, dati della squadra (giocatori, allenamenti, partite, esercizi, eventi), informazioni sui membri e inviti. Le fotografie dei giocatori e le immagini degli esercizi vengono codificate in base64 e salvate nei documenti Firestore</li>
       <li><strong>Perché:</strong> Sincronizzazione dei dati tra dispositivi e condivisione della squadra tra allenatori</li>
       <li><strong>Link Privacy:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></li>
     </ul>
@@ -486,16 +496,17 @@
     </ul>
 
     <h3>16.3 Versione Applicabile</h3>
-    <p>Questa è la versione 2.0 della Privacy Policy, applicabile da febbraio 2026.</p>
+    <p>Questa è la versione 3.0 della Privacy Policy, applicabile da marzo 2026.</p>
 
     <h3>16.4 Changelog</h3>
     <ul>
+      <li><strong>Versione 3.0 (28 marzo 2026):</strong> Aggiunti piede preferito e posizione/ruolo dei giocatori. Documentata la lavagna tattica, il calendario eventi, la libreria esercizi con importazione/esportazione. Aggiornate sezioni dati raccolti, finalità e archiviazione.</li>
       <li><strong>Versione 2.0 (28 febbraio 2026):</strong> Aggiunta documentazione per Firebase Authentication (Google Sign-In), sincronizzazione dati su Cloud Firestore, condivisione squadra tra allenatori, gestione membri e inviti. Aggiornate le sezioni relative all'archiviazione cloud, alla condivisione con terzi e alla sicurezza dei dati.</li>
       <li><strong>Versione 1.0 (31 gennaio 2026):</strong> Prima versione della Privacy Policy.</li>
     </ul>
 
     <hr style="margin: 48px 0 24px; border: none; border-top: 2px solid var(--bg-alt);">
-    <p><strong>Ultima modifica:</strong> 28 febbraio 2026</p>
+    <p><strong>Ultima modifica:</strong> 28 marzo 2026</p>
     <p><strong>Accettazione:</strong> L'uso dell'Applicazione implica l'accettazione di questa Privacy Policy in toto.</p>
 
   </div>
